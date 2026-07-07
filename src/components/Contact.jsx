@@ -15,16 +15,44 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    setSubmitStatus(null);
+
+    // ใส่ Access Key ของคุณที่นี่ (ขอฟรีได้ทันทีที่ https://web3forms.com/)
+    // แค่กรอกอีเมลของคุณที่เว็บ แล้วระบบจะส่ง Key ให้ในอีเมล นำคีย์นั้นมาแปะลงตรงนี้ครับ
+    const ACCESS_KEY = "c0283304-7c78-420b-9599-459a3b5e5495"; 
+
+    const payload = {
+      ...formData,
+      access_key: ACCESS_KEY
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -160,6 +188,12 @@ export default function Contact() {
               {submitStatus === 'success' && (
                 <div className="rounded-lg border border-green-500/30 bg-green-950/20 p-4 text-center text-sm text-green-400 font-mono animate-fadeIn">
                   ส่งข้อความสำเร็จเรียบร้อย! ขอบคุณที่ติดต่อเข้ามาครับ
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="rounded-lg border border-red-500/30 bg-red-950/20 p-4 text-center text-sm text-red-400 font-mono animate-fadeIn">
+                  เกิดข้อผิดพลาดในการส่งข้อความ กรุณาลองใหม่อีกครั้ง หรือส่งทางอีเมลโดยตรงครับ
                 </div>
               )}
             </form>

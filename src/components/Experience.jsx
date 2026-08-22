@@ -108,59 +108,59 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-900 bg-slate-950/40">
-      <div className="mx-auto max-w-4xl">
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800 bg-[#0b0f19]/30">
+      <div className="mx-auto max-w-4xl relative z-10">
         {/* Section Heading */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center space-x-2 rounded-full bg-slate-900 px-3 py-1 text-sm text-cyan-400 mb-3 border border-slate-800">
-            <Calendar className="h-4 w-4" />
-            <span>Timeline</span>
+        <div className="flex flex-col items-center text-center mb-20">
+          <div className="inline-flex items-center space-x-2 rounded-full border border-slate-800 bg-slate-900/60 px-3.5 py-1 text-slate-300 mb-4">
+            <Calendar className="h-3.5 w-3.5" />
+            <span className="font-mono text-xs tracking-wider">Timeline</span>
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             ประสบการณ์และกิจกรรม
           </h2>
-          <div className="mt-2 h-1 w-12 rounded bg-gradient-to-r from-cyan-400 to-purple-500"></div>
+          <div className="mt-4 h-1 w-12 rounded bg-cyan-500"></div>
         </div>
 
         {/* Timeline Layout */}
-        <div className="relative border-l border-slate-800 ml-4 md:ml-8 space-y-12">
+        <div className="relative border-l border-slate-800 ml-4 md:ml-8 space-y-10">
           {experiences.map((exp, index) => (
-            <div key={index} className="relative pl-8 sm:pl-10">
+            <div key={index} className="relative pl-8 sm:pl-12 group">
               {/* Timeline Indicator Node */}
-              <span className="absolute -left-4 top-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-slate-950 border border-slate-700 text-cyan-400 shadow-md">
-                {exp.type === 'work' && <Briefcase className="h-4 w-4 text-cyan-400" />}
+              <span className="absolute -left-[17px] top-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-slate-950 border border-slate-800 text-slate-400 transition-all duration-200">
+                {exp.type === 'work' && <Briefcase className="h-4 w-4 text-cyan-500" />}
                 {exp.type === 'education' && <GraduationCap className="h-4 w-4 text-purple-400" />}
-                {exp.type === 'activity' && <Award className="h-4 w-4 text-emerald-400" />}
+                {exp.type === 'activity' && <Award className="h-4 w-4 text-emerald-450" />}
               </span>
 
               {/* Box Content */}
-              <div className="rounded-xl border border-slate-800/80 bg-slate-900/20 p-6 backdrop-blur-sm hover:border-slate-700 transition-all duration-300">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/10 p-6 hover:border-slate-700 transition-all duration-200">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                   <div>
-                    <h3 className="text-lg font-bold text-white leading-snug">
+                    <h3 className="text-base font-bold text-white leading-snug group-hover:text-cyan-400 transition-colors duration-200">
                       {exp.role}
                     </h3>
-                    <p className="text-sm font-mono text-cyan-400 mt-1">
+                    <p className="text-xs font-mono text-cyan-500 mt-1.5">
                       {exp.organization}
                     </p>
                   </div>
-                  <span className="inline-block self-start sm:self-center rounded-full bg-slate-900 px-3 py-1 text-xs font-mono text-slate-400 border border-slate-800 mt-2 sm:mt-0">
+                  <span className="inline-block self-start rounded bg-slate-900/80 px-2.5 py-1 text-xs font-mono text-slate-400 border border-slate-800 whitespace-nowrap mt-1 sm:mt-0 shadow-inner">
                     {exp.period}
                   </span>
                 </div>
 
                 {/* Details list */}
-                <ul className="space-y-2.5">
+                <ul className="space-y-3">
                   {exp.details.map((detail, dIdx) => (
-                    <li key={dIdx} className="text-sm text-slate-400 flex items-start space-x-2">
-                      <span className="text-cyan-500 mt-1 select-none">▪</span>
+                    <li key={dIdx} className="text-xs text-slate-400 flex items-start space-x-2 leading-relaxed">
+                      <span className="text-cyan-500 mt-1 select-none text-[6px]">■</span>
                       <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
 
                 {exp.link && (
-                  <div className="mt-4 border-t border-slate-800/40 pt-3">
+                  <div className="mt-5 border-t border-slate-800/80 pt-4">
                     <a
                       href={exp.link}
                       target="_blank"

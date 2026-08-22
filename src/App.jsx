@@ -9,12 +9,12 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0b1329] text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-900">
+    <div className="relative min-h-screen bg-[#0b0f19] text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-900 overflow-x-hidden">
       {/* Navigation Header */}
       <Navbar />
 
       {/* Main Contents */}
-      <main>
+      <main className="relative z-10">
         {/* Hero Section */}
         <Hero />
 
@@ -38,3 +38,5 @@ function App() {
 }
 
 export default App;
+
+

@@ -21,15 +21,15 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative flex min-h-[calc(100vh-4.5rem)] items-center justify-center py-16 px-4">
-      <div className="mx-auto max-w-4xl text-center relative z-10">
+      <div className="mx-auto max-w-4xl flex flex-col items-center text-center relative z-10 w-full">
         {/* Profile Avatar */}
-        <div className="relative inline-block mb-8">
-          <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-60 blur-xl transition duration-500 group-hover:opacity-100 animate-pulse"></div>
-          <div className="relative p-1 rounded-full bg-gradient-to-br from-cyan-400 via-slate-800 to-purple-500 shadow-2xl">
+        <div className="relative mb-8 flex justify-center items-center">
+          <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-60 blur-xl transition duration-500 animate-pulse"></div>
+          <div className="relative p-1 rounded-full bg-gradient-to-br from-cyan-400 via-slate-800 to-purple-500 shadow-2xl flex items-center justify-center">
             <img
               src={profileAvatar}
               alt="กฤตวิทย์ บุญสพ (Krittawit Bunsop)"
-              className="h-36 w-36 sm:h-44 sm:w-44 md:h-48 md:w-48 rounded-full object-cover shadow-inner ring-4 ring-slate-950/80"
+              className="h-36 w-36 sm:h-44 sm:w-44 md:h-48 md:w-48 rounded-full object-cover object-center shadow-inner ring-4 ring-slate-950/80 block"
             />
           </div>
         </div>

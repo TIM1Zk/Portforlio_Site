@@ -1,7 +1,11 @@
-import React from 'react';
-import { Calendar, Award, Briefcase, GraduationCap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, Award, Briefcase, GraduationCap, X, ZoomIn } from 'lucide-react';
+import startupPitchImg from '../assets/startup-pitch.jpg';
+import startupTeamImg from '../assets/startup-team.jpg';
 
 export default function Experience() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const experiences = [
     {
       role: 'Teaching Assistant (TA) - Programming Logic & Server-Side Programming',
@@ -21,6 +25,10 @@ export default function Experience() {
       type: 'work',
       link: 'https://canva.link/qij0p2yln5k8iv0',
       linkLabel: 'ดูสไลด์ Pitch Deck บน Canva',
+      images: [
+        { src: startupPitchImg, alt: 'การนำเสนอ Pitching โครงการ Safe Seat บนเวทีต่อหน้าคณะกรรมการ' },
+        { src: startupTeamImg, alt: 'ทีม INNOVIX ตัวแทนมหาวิทยาลัยแม่โจ้' }
+      ],
       details: [
         'ได้รับคัดเลือกเป็นตัวแทนมหาวิทยาลัยแม่โจ้ เข้าร่วมการแข่งขันพิชชิ่งระดับภูมิภาคภาคเหนือ ณ อาคารอำนวยการอุทยานวิทยาศาสตร์ภูมิภาค เชียงใหม่',
         'ร่วมกับทีมออกแบบและพัฒนาเว็บ/แอปพลิเคชันนวัตกรรม Safe Seat (แพลตฟอร์มป้องกันและลดปัญหาการเมาแล้วขับ)',
@@ -169,6 +177,35 @@ export default function Experience() {
                   ))}
                 </ul>
 
+                {/* Event Photos (Startup Thailand League) */}
+                {exp.images && exp.images.length > 0 && (
+                  <div className="mt-5 pt-4 border-t border-slate-800/60">
+                    <span className="text-[10px] font-mono text-cyan-400 block mb-2.5 uppercase tracking-wider">
+                      // Event Highlights
+                    </span>
+                    <div className="grid grid-cols-2 gap-3">
+                      {exp.images.map((img, iIdx) => (
+                        <div
+                          key={iIdx}
+                          onClick={() => setSelectedImage(img)}
+                          className="group/img relative overflow-hidden rounded-lg border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-cyan-500/50 transition-all duration-200"
+                        >
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="h-28 sm:h-36 w-full object-cover transition-transform duration-300 group-hover/img:scale-105"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end justify-between p-2">
+                            <span className="text-[10px] text-slate-200 font-mono truncate mr-2">{img.alt}</span>
+                            <ZoomIn className="h-3.5 w-3.5 text-cyan-400 flex-shrink-0" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {exp.link && (
                   <div className="mt-5 border-t border-slate-800/80 pt-4">
                     <a
@@ -187,6 +224,35 @@ export default function Experience() {
           ))}
         </div>
       </div>
+
+      {/* Image Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fadeIn"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-w-3xl w-full rounded-2xl border border-slate-800 bg-[#0b0f19] p-3 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-3 -right-3 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors shadow-lg cursor-pointer"
+              aria-label="Close"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="max-h-[75vh] w-full rounded-xl object-contain bg-slate-950"
+            />
+            <p className="mt-3 text-center font-mono text-xs text-slate-300">
+              {selectedImage.alt}
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

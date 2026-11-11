@@ -23,13 +23,13 @@ export default function Hero() {
     <section id="hero" className="relative flex min-h-[calc(100vh-4.5rem)] items-center justify-center py-16 px-4">
       <div className="mx-auto max-w-4xl text-center relative z-10">
         {/* Profile Avatar */}
-        <div className="relative inline-block mb-6">
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-60 blur-lg transition duration-500 group-hover:opacity-100 animate-pulse"></div>
-          <div className="relative p-1 rounded-full bg-gradient-to-br from-cyan-400 via-slate-850 to-purple-500 shadow-2xl">
+        <div className="relative inline-block mb-8">
+          <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-60 blur-xl transition duration-500 group-hover:opacity-100 animate-pulse"></div>
+          <div className="relative p-1 rounded-full bg-gradient-to-br from-cyan-400 via-slate-800 to-purple-500 shadow-2xl">
             <img
               src={profileAvatar}
               alt="กฤตวิทย์ บุญสพ (Krittawit Bunsop)"
-              className="h-28 w-28 sm:h-36 sm:w-36 rounded-full object-cover shadow-inner ring-2 ring-slate-900"
+              className="h-36 w-36 sm:h-44 sm:w-44 md:h-48 md:w-48 rounded-full object-cover shadow-inner ring-4 ring-slate-950/80"
             />
           </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { User, Layout, Settings, Database, Smartphone } from 'lucide-react';
-import profileAvatar from '../assets/profile-avatar.jpg';
 
 export default function About() {
   const skillCategories = [
@@ -45,23 +44,10 @@ export default function About() {
           {/* Bio Column */}
           <div className="lg:col-span-5 flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/20 p-8 shadow-sm">
             <div className="space-y-5">
-              <div className="flex items-center space-x-4 pb-4 border-b border-slate-800/80">
-                <div className="relative">
-                  <img
-                    src={profileAvatar}
-                    alt="กฤตวิทย์ บุญสพ"
-                    className="h-16 w-16 rounded-2xl object-cover ring-2 ring-cyan-500/40 border border-slate-800 shadow-md"
-                  />
-                  <span className="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-slate-950 border border-slate-800 text-[10px]">
-                    💻
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-base font-bold text-white font-sans">กฤตวิทย์ บุญสพ</h3>
-                  <span className="text-xs font-mono text-cyan-400 block">// IT @ Maejo University</span>
-                  <span className="text-[11px] font-mono text-slate-400">Full-Stack & Mobile Developer</span>
-                </div>
-              </div>
+              <h3 className="text-lg font-bold text-white font-mono flex items-center space-x-2">
+                <span className="text-cyan-400">&gt;</span>
+                <span>Who am I?</span>
+              </h3>
               <p className="text-slate-300 leading-relaxed text-sm">
                 สวัสดีครับ! ผมเป็นนักพัฒนา Full-Stack และ Mobile Developer ที่มีความมุ่งมั่นในการออกแบบและสร้างสรรค์แอปพลิเคชันบนเว็บและมือถือ เพื่อส่งมอบประสบการณ์การใช้งานที่ราบรื่นและดีที่สุดให้แก่ผู้ใช้
               </p>

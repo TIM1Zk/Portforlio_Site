@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Download, Mail } from 'lucide-react';
-import profileAvatar from '../assets/profile-avatar.jpg';
 
 export default function Hero() {
   const handleScrollToProjects = () => {
@@ -22,20 +21,8 @@ export default function Hero() {
   return (
     <section id="hero" className="relative flex min-h-[calc(100vh-4.5rem)] items-center justify-center py-16 px-4">
       <div className="mx-auto max-w-4xl text-center relative z-10">
-        {/* Profile Avatar with Tech Glow */}
-        <div className="relative inline-block mb-6">
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 opacity-60 blur-lg transition duration-500 group-hover:opacity-100 animate-pulse"></div>
-          <div className="relative p-1 rounded-full bg-gradient-to-br from-cyan-400 via-slate-800 to-purple-500 shadow-2xl">
-            <img
-              src={profileAvatar}
-              alt="กฤตวิทย์ บุญสพ (Krittawit Bunsop)"
-              className="h-28 w-28 sm:h-36 sm:w-36 rounded-full object-cover shadow-inner ring-2 ring-slate-900"
-            />
-          </div>
-        </div>
-
         {/* Availability Badge */}
-        <div className="inline-flex items-center space-x-2.5 rounded-full border border-emerald-500/30 bg-emerald-950/30 px-4 py-1.5 mb-6 shadow-sm backdrop-blur-sm">
+        <div className="inline-flex items-center space-x-2.5 rounded-full border border-emerald-500/30 bg-emerald-950/30 px-4 py-1.5 mb-8 shadow-sm backdrop-blur-sm">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>

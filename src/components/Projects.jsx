@@ -1,6 +1,5 @@
 import React from 'react';
 import { ExternalLink, FolderGit2 } from 'lucide-react';
-import safeSeatBanner from '../assets/startup-pitch.jpg';
 
 export default function Projects() {
   const projects = [
@@ -8,8 +7,7 @@ export default function Projects() {
       title: 'Safe Seat (Driver App)',
       description: 'แอปพลิเคชันสำหรับป้องกันและลดปัญหาการเมาแล้วขับ ร่วมแข่งขัน Startup Thailand League 2026 รอบภูมิภาค ภาคเหนือ พัฒนาแอปมือถือระบบความปลอดภัยและกระเป๋าเงินดิจิทัลเชื่อมต่อ Supabase',
       tech: ['Flutter', 'Dart', 'Supabase', 'Startup League'],
-      github: 'https://github.com/TIM1Zk/Safe-Seat-Project-Driver',
-      banner: safeSeatBanner
+      github: 'https://github.com/TIM1Zk/Safe-Seat-Project-Driver'
     },
     {
       title: 'AimZone',
@@ -67,16 +65,8 @@ export default function Projects() {
               className="group flex flex-col overflow-hidden rounded-xl border border-slate-800 bg-slate-900/20 transition-all duration-300 hover:border-slate-700 hover:-translate-y-1 shadow-sm"
             >
               {/* Project Card Visual Header */}
-              <div className="relative h-44 w-full bg-slate-950/80 flex items-center justify-center p-6 border-b border-slate-800/80 overflow-hidden">
-                {project.banner && (
-                  <img
-                    src={project.banner}
-                    alt={project.title}
-                    className="absolute inset-0 h-full w-full object-cover opacity-30 group-hover:scale-105 group-hover:opacity-40 transition-all duration-300"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
-                <div className="text-center relative z-10">
+              <div className="relative h-36 w-full bg-slate-950/80 flex items-center justify-center p-6 border-b border-slate-800/80">
+                <div className="text-center">
                   <span className="font-mono text-[9px] text-cyan-400 font-bold uppercase tracking-[0.25em] block mb-1.5">// Project #{index + 1}</span>
                   <span className="font-sans text-lg font-bold text-white tracking-wide">{project.title}</span>
                 </div>

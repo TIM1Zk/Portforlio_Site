@@ -1,5 +1,6 @@
 import React from 'react';
 import { User, Layout, Settings, Database, Smartphone } from 'lucide-react';
+import profileAvatar from '../assets/profile-avatar.jpg';
 
 export default function About() {
   const skillCategories = [
@@ -44,23 +45,49 @@ export default function About() {
           {/* Bio Column */}
           <div className="lg:col-span-5 flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/20 p-8 shadow-sm">
             <div className="space-y-5">
-              <h3 className="text-lg font-bold text-white font-mono flex items-center space-x-2">
-                <span className="text-cyan-400">&gt;</span>
-                <span>Who am I?</span>
-              </h3>
+              <div className="flex items-center space-x-4 pb-4 border-b border-slate-800/80">
+                <div className="relative">
+                  <img
+                    src={profileAvatar}
+                    alt="กฤตวิทย์ บุญสพ"
+                    className="h-16 w-16 rounded-2xl object-cover ring-2 ring-cyan-500/40 border border-slate-800 shadow-md"
+                  />
+                  <span className="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-slate-950 border border-slate-800 text-[10px]">
+                    💻
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-white font-sans">กฤตวิทย์ บุญสพ</h3>
+                  <span className="text-xs font-mono text-cyan-400 block">// IT @ Maejo University</span>
+                  <span className="text-[11px] font-mono text-slate-400">Full-Stack & Mobile Developer</span>
+                </div>
+              </div>
               <p className="text-slate-300 leading-relaxed text-sm">
                 สวัสดีครับ! ผมเป็นนักพัฒนา Full-Stack และ Mobile Developer ที่มีความมุ่งมั่นในการออกแบบและสร้างสรรค์แอปพลิเคชันบนเว็บและมือถือ เพื่อส่งมอบประสบการณ์การใช้งานที่ราบรื่นและดีที่สุดให้แก่ผู้ใช้
               </p>
               <p className="text-slate-400 leading-relaxed text-xs">
-                ผมชื่นชอบการเขียนโค้ดด้วยโครงสร้างสถาปัตยกรรมที่คลีน มีความเชี่ยวชาญทั้งการสร้างฝั่งหน้าบ้านด้วย **React** และแอปมือถือด้วย **Flutter** ร่วมกับจัดการระบบหลังบ้านให้ทำงานได้รวดเร็วด้วย **Go (Golang)** และ **Python**
+                ผมชื่นชอบการเขียนโค้ดด้วยโครงสร้างสถาปัตยกรรมที่คลีน มีความเชี่ยวชาญทั้งการสร้างฝั่งหน้าบ้านด้วย <span className="text-cyan-400 font-medium">React</span> และแอปมือถือด้วย <span className="text-purple-400 font-medium">Flutter</span> ร่วมกับจัดการระบบหลังบ้านให้ทำงานได้รวดเร็วด้วย <span className="text-emerald-400 font-medium">Go (Golang)</span> และ <span className="text-amber-400 font-medium">Python</span>
               </p>
             </div>
             
             <div className="mt-8 rounded-lg border border-slate-800 bg-slate-900/40 p-5">
-              <span className="text-xs font-mono text-cyan-400 block mb-2">// Internship Goal</span>
-              <p className="text-slate-350 text-xs leading-relaxed">
-                พร้อมเรียนรู้เทคโนโลยีใหม่ ๆ เสมอ มีทัศนคติเชิงบวก และมุ่งมั่นที่จะนำความรู้ที่มีมาร่วมพัฒนาผลิตภัณฑ์จริงร่วมกับทีมผู้เชี่ยวชาญ
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-mono text-cyan-400">// Internship Goal</span>
+                <span className="rounded bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 text-[10px] font-mono text-emerald-400">
+                  Ready to Join
+                </span>
+              </div>
+              <p className="text-slate-300 text-xs leading-relaxed mb-3">
+                มุ่งมั่นนำทักษะด้าน Full-Stack & Mobile Development มาร่วมสร้างคุณค่าและพัฒนาโปรดักต์จริง พร้อมเรียนรู้เทคโนโลยีใหม่ ทำงานร่วมกับทีมอย่างมีประสิทธิภาพ
               </p>
+              <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/80">
+                <span className="text-[10px] font-mono text-slate-400 bg-slate-950/60 px-2 py-0.5 rounded border border-slate-800">
+                  🎯 Full-Stack Intern
+                </span>
+                <span className="text-[10px] font-mono text-slate-400 bg-slate-950/60 px-2 py-0.5 rounded border border-slate-800">
+                  📱 Mobile Developer Intern
+                </span>
+              </div>
             </div>
           </div>
 
